@@ -1,7 +1,7 @@
 
-# Profile Generator
+# Great project
 ## Description
-An app that dynamically generates a README.md
+It's really great
         
 ## Table of Contents
         

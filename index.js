@@ -2,11 +2,16 @@ const axios = require('axios');
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-inquirer.prompt([
+
+        function displyAnswers(answers) {
+            console.log("answers ", answers)
+        }
+        var questions = [
+    
         {
             type: "input",
             message: "What is your GitHub user name?",
-            name: "username"
+            name: "userName"
         },
         {
             type: "input",
@@ -20,30 +25,32 @@ inquirer.prompt([
         },
         {
             type: "list",
-            message: "What kind of license should your project have?",
+            message: "What type of license should your project have?",
             choices: ["MIT","Apache","Mozilla"],
-            name: "licensetype"
+            name: "licenseType"
         },
        
         {
             type: "input",
-            message: "What command should be run to run tests?",
+            message: "What is the command to run tests?",
             name: "tests",
             default: "npm test"
         },
         {
             type: "input",
-            message: "What does the user need to know about using the repo?",
-            name: "about"
+            message: "How is this repo used?",
+            name: "repoUsuage"
         },
         {
             type: "input",
             message: "What does the user need to know about contributing to the repo?",
-            name: "contributing"
+            name: "contribute"
         }
-    ]).then(function(answer) {
+    
+    ]
+    inquirer.prompt(questions, displyAnswers ).then(function(answer)  {
         
-        const queryURL = `https://api.github.com/users/${answer.username}`;
+        const queryURL = `https://api.github.com/users/${answer.userName}`;
 
         //fetch data using axios
         
@@ -54,16 +61,16 @@ inquirer.prompt([
             console.log("answer", JSON.stringify(answer));
             console.log(userImage)
 
-            const data = getData(answer, userImage);
+            const data = genMD(answer, userImage);
 
             fs.writeFile("README.md", data, function() {
-
+                     return data;
             });
         })   
     });
 
 
-function getData({username, project, description, licensetype, dependencies, tests, about, contributing},userImage) {
+function genMD({userName, project, description, licenseType, tests,  repoUsuage, contribute},userImage) {
 
     console.log("project",project);
     return `
