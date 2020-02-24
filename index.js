@@ -54,53 +54,53 @@ const fs = require("fs");
         }
     
     ]
-    inquirer.prompt(questions, displyAnswers ).then(function(answer)  {
+    inquirer.prompt(questions).then(function(answers)  {
+
+        console.log(answers)
         
-        const queryURL = `https://api.github.com/users/${answer.userName}`;
+        const queryURL = `https://api.github.com/search/users?q=${answers.userName}`
 
         //fetch data using axios
         
         axios.get(queryURL).then(function(res) {
-            console.log(res)
+        
             let userImage = res.data.avatar_url
 
-            console.log("answer", JSON.stringify(answer));
-            console.log(userImage)
+            const markdownObject = {...answers, userImage}
 
-            const data = genMD(answer, userImage);
+            const data = genMD(markdownObject);
 
-            fs.writeFile("README.md", data, function() {
-                   
+            fs.writeFile("user-README.md", data, function(err) {
+                 if (err) throw err;
             });
         })   
     });
 
 
-function genMD({userName, userEmail, project, description, licenseType, tests,  repoUsuage, contribute},userImage) {
+function genMD({userName, userEmail, project, description, licenseType, tests,  repoUsuage, contribute, userImage}) {
 
     console.log("project",project);
     return `
 ## User Email: ${userEmail}
+
 ## User Name: ${userName}
+
 # ${project}
+
 ## Description
+
 ${description}
-        
-## Table of Contents
-        
-* [Installation](#installation)
         
 * Usage: ${repoUsuage}
         
 * License: ${licenseType}
         
-* [Contributing](#contributing)
+* Contributing  ${contribute}
         
 * Tests: ${tests}
-        
-* [Questions](#questions)
-  
-        
+  k
+
+       
 `
 
 }
