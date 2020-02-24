@@ -6,8 +6,14 @@ const fs = require("fs");
         function displyAnswers(answers) {
             console.log("answers ", answers)
         }
-        var questions = [
+
+        var questions = [{
+
+        type: "input",
+            message: "user email: ",
+            name: "userEmail"
     
+        },
         {
             type: "input",
             message: "What is your GitHub user name?",
@@ -64,16 +70,18 @@ const fs = require("fs");
             const data = genMD(answer, userImage);
 
             fs.writeFile("README.md", data, function() {
-                     return data;
+                   
             });
         })   
     });
 
 
-function genMD({userName, project, description, licenseType, tests,  repoUsuage, contribute},userImage) {
+function genMD({userName, userEmail, project, description, licenseType, tests,  repoUsuage, contribute},userImage) {
 
     console.log("project",project);
     return `
+##${userEmail}
+##${userName}
 # ${project}
 ## Description
 ${description}
@@ -84,13 +92,14 @@ ${description}
         
 * [Usage](#usage)
         
-* [License](#license)
+* [License]${licenseType}
         
 * [Contributing](#contributing)
         
 * [Tests](#tests)
         
 * [Questions](#questions)
+  
         
 `
 
