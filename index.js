@@ -80,7 +80,7 @@ function genMD({userName, userEmail, project, description, licenseType, tests,  
 
     console.log("project",project);
     return `
-## User Email: ${ userEmail}
+## User Email: ${userEmail}
 ## User Name: ${userName}
 # ${project}
 ## Description
@@ -92,7 +92,7 @@ ${description}
         
 * [Usage](#usage)
         
-* [License]${licenseType}
+* [License] (${licenseType})
         
 * [Contributing](#contributing)
         

@@ -1,9 +1,9 @@
 
-##noPerson@nomail.com
-##Jaliov
-# Excellent Project
+## User Email: noPerson@noemail.com
+## User Name: Jaliov
+# Great Project
 ## Description
-A project to great things
+A project to do great things
         
 ## Table of Contents
         
@@ -11,7 +11,7 @@ A project to great things
         
 * [Usage](#usage)
         
-* [License]Mozilla
+* [License] (Apache)
         
 * [Contributing](#contributing)
         
