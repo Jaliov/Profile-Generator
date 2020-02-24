@@ -80,8 +80,8 @@ function genMD({userName, userEmail, project, description, licenseType, tests,  
 
     console.log("project",project);
     return `
-##${userEmail}
-##${userName}
+##${"User Email", userEmail}
+##${"User Name", userName}
 # ${project}
 ## Description
 ${description}
