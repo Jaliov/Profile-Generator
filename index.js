@@ -90,13 +90,13 @@ ${description}
         
 * [Installation](#installation)
         
-* [Usage](#usage)
+* Usage: ${repoUsuage}
         
-* [License] (${licenseType})
+* License: ${licenseType}
         
 * [Contributing](#contributing)
         
-* [Tests](#tests)
+* Tests: ${tests}
         
 * [Questions](#questions)
   

@@ -1,21 +1,21 @@
 
-## User Email: noPerson@noemail.com
+## User Email: noPerson@nonemail.com
 ## User Name: Jaliov
-# Great Project
+# Profile Generator
 ## Description
-A project to do great things
+A project to generate a profile
         
 ## Table of Contents
         
 * [Installation](#installation)
         
-* [Usage](#usage)
+* Usage: for learning MD
         
-* [License] (Apache)
+* License: Mozilla
         
 * [Contributing](#contributing)
         
-* [Tests](#tests)
+* Tests: npm test
         
 * [Questions](#questions)
   
