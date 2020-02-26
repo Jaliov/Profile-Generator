@@ -79,15 +79,11 @@ inquirer.prompt(questions).then(function (answers) {
 
     const queryURL = `https://api.github.com/search/users?q=${answers.userName}`
 
-    //fetch data using axios
-
+    //axios
     axios.get(queryURL).then(function (res) {
 
-        
-        var avatar_url = `https://avatars.githubusercontent.com/u/`
-        let userImage = res.data.avatar_url
-       
-
+        console.log(res.data)
+        let userImage = res.data.items[0].avatar_url
         const markdownObject = {
             ...answers,
             userImage
@@ -111,10 +107,10 @@ function genMD({
     tests,
     repoUsuage,
     contribute,
+    installation,
     userImage,
-    installation
 }) {
-  
+
     console.log("project", project);
     return `
 
@@ -122,7 +118,7 @@ function genMD({
 
 ## User Email: ${email}
 
-# Project Name: ${project}
+# Project Name: **${project}** #
 
 * **Description:** ${description}
        
@@ -138,7 +134,7 @@ function genMD({
 
 * **Installation:** ${installation}
         
- ${userImage}
+![user image](${userImage}.png)
      
 `
 

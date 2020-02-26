@@ -2,23 +2,23 @@
 
 ## User Name: Jaliov
 
-## User Email: noperson@nomail.com
+## User Email: John@john.com
 
-# Project Name: Great Project
+# Project Name: **Project** #
 
-* **Description:** A project to do great things
+* **Description:** Great Project
        
 * **Usage:** for good
         
 * **License:** MIT
 
-* **Tests:** test
+* **Tests:** npm test
 
 * **Repo Usage:** for good
         
-* **Contributing:**  No
+* **Contributing:**  it's good
 
-* **Installation:** Just do it
+* **Installation:** do it
         
- undefined
+![user image](https://avatars0.githubusercontent.com/u/50626351?v=4.png)
      
